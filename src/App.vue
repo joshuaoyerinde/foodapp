@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <router-view></router-view>
+       <!-- <FoodNav v-bind:ct="message"/> -->
+     <!-- <Carouse />
+      <LandingPage/>
+      <h3>{{message}}</h3>
+      <v-btn @click="count">Count</v-btn> -->
+      <!-- <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> -->
+    <!-- <router-view/> -->
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// import Carouse from './components/carousel'
+// import LandingPage from './components/landingPage'
+// import FoodNav from './components/foodNav'
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data: () => ({
+     message: 0
+
+  }),
+  components:{
+    // LandingPage,
+    // FoodNav,
+    // Carouse 
   }
 }
 </script>
+<style lang="scss">
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
