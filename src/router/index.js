@@ -13,9 +13,13 @@ import Details from '../components/details.vue';
 import Payment from '../components/payment.vue'
 import vext from '../components/text.vue';
 import Spinal from '../components/spinal.vue';
-import UsersAccount from '../components/usersaccount.vue';
+import Usershistory from '../components/usersaccount.vue';
 import Confirmorders from '../components/order.vue';
 import Usersdetails from '../admincomponent/usersDetails.vue';
+import Commands from '../admincomponent/commands.vue';
+import Invoice from '../components/invoice.vue';
+import Thankyou from '../components/thank.vue'
+// import AccountNAv from '../components/account.vue';
 
 Vue.use(VueRouter)
 
@@ -30,7 +34,8 @@ Vue.use(VueRouter)
     children:[
       {path:'/AdminDarshboard', component:AdminDarshboard},
       {path:'/addProduct', component:addProduct},
-      {path:'/admin-usersdetails', name:'admin-usersdetails', component:Usersdetails}
+      {path:'/admin-usersdetails', name:'admin-usersdetails', component:Usersdetails},
+      {path:'/details-commanda', name:'commands', component: Commands}
     ]
   },
   // users, cart, Login, registration, path 
@@ -39,11 +44,17 @@ Vue.use(VueRouter)
   { path:'/loginpage', name:'login-page', component:LoginPage},
   { path:'/SignUp-page', component:SignUppage},
   { path:'/payment-page/:userid?', component:Payment},
-  { path:'/details/:id?', component:Details},
+  { path:'/details/:id?', name:'details-page', component:Details},
   { path:'/payment-loading/:userid', name:'payment-loading', component:Spinal},
   { path:'/text', component:vext},
   { path: '/confirm-orders/:userid', name:'order', component:Confirmorders},
-  { path:'/usersAccount', component:UsersAccount }
+  { path:'/invoicepage', redirect:{name:'thank-you'},  name:'invoice-page', component:Invoice,
+  children:[
+          {path: '/thankyou', name:'thank-you', component:Thankyou},
+          {path:'/usersaccount', name:'user-account',component:Usershistory},
+    ] 
+  },
+  // { path:'//:id?', name:'user-account', component:UsersAccount }
   // {
     // path: '/about',
     // name: 'About',

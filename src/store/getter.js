@@ -11,8 +11,11 @@ const getters ={
     getTotOrder(state){
         return state.totalorder;
     },
-    getUsersToAdmin(state){
-        return state.getusers;
-    }
+    getCommands(state){
+        return state.commands;
+    },
+    // gethistory(state){
+    //     return state.usershistory;
+    // }
 };
 export default getters

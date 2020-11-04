@@ -29,18 +29,18 @@
             <v-col cols="12" md="4" lg="9">
                 <v-form v-if="usersinfo">
                  <v-row>
-                    <v-col cols="12" md="5" lg="5">
+                    <v-col cols="6" md="5" lg="5">
                         <v-text-field  class="mt-n4" :rules="[rules.required]"
                         v-model="fstname" color="#E53935" label="First Name" filled>
                         </v-text-field>
                     </v-col>
-                    <v-col cols="12" md="5" lg="5" class="mt-n4">
+                    <v-col cols="6" md="5" lg="5" class="mt-n4">
                         <v-text-field  color="#E53935" :rules="[rules.required]" v-model="lastname" label="last Name" filled></v-text-field>
                     </v-col>
-                     <v-col cols="12" md="5" lg="5" class="mt-n4">
+                     <v-col cols="6" md="5" lg="5" class="mt-n4">
                         <v-text-field  color="#E53935" :rules="[rules.required]" v-model="phone" label="phone Number" filled></v-text-field>
                     </v-col>
-                    <v-col cols="12" md="5" class="mt-n4">
+                    <v-col cols="6" md="5" class="mt-n4">
                         <v-text-field  color="#E53935" :rules="[rules.required]" v-model="city" label="city" filled></v-text-field>
                     </v-col>
                     <v-col cols="12" md="10" class="mt-n4">

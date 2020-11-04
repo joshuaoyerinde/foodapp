@@ -9,7 +9,7 @@
    </v-row>
     <v-row class="justify-content-center mx-auto">
         <v-col cols="6" sm="4" md="3"  xl="4" lg="3"   v-for="product in  filterednames" :key="product.product_id">
-            <v-card raised >
+            <v-card raised  shaped>
                 <v-img :src="require(`../../../foodend/productpic/${product.productimage}`)" alt="food-image" aspect-ratio="2.2">  
                 </v-img>
                 <div>

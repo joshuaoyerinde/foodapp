@@ -6,7 +6,6 @@
             <span>FOOd</span>
             <span class="font-weight-light text-danger">APp</span>
         </v-toolbar-title>
-        <div class="row justify-content-center">
             <div class="col-md-4 mx-auto">
             </div>
             <router-link to="/carts" tag="button">
@@ -19,7 +18,6 @@
                     SignUp
                 </v-btn>
             </router-link>
-        </div>
          <v-spacer></v-spacer>
             <v-btn icon>
                 <i class="fa fa-user" :style="{fontSize:'20px'}"></i>
@@ -37,7 +35,7 @@
             </template>
         </v-snackbar>
         <v-container class="padding-loginPage">
-            <v-card raised width="510px" height="350px" class="mx-auto">
+            <v-card raised shaped width="510px" height="350px" class="mx-auto">
                 <v-card-title class="text-center">
                     <h5 class="mt-4">Login</h5>
                 </v-card-title>
@@ -91,6 +89,7 @@ export default {
             formLogin.append('password',this.password);
             Axios.post(url,formLogin).then(res => {
                 this.text=res.data;
+                console.log(this.text)
                 if(this.text.success == false){
                     this.load = true;
                     setTimeout(() => {
@@ -105,6 +104,7 @@ export default {
                         this.load = false;
                         console.log(this.text.message);
                         this.$router.push('/details/'+ this.text.message);
+                        // this.$router.replace({name:'details-page', url:this.text.message});
                     }, 2000);
                     // let o = this.text.find(m => m.message);
                     // console.log(o);

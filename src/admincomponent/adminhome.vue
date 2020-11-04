@@ -34,23 +34,34 @@
             <!-- <router-link to="/AdminDarshboard" tag="button"> -->
             <v-list-item>
                 <v-list-item-icon>
-                <v-icon>mdi-view-dashboard</v-icon>
+                <v-icon color="#E53935">mdi-view-dashboard</v-icon>
                 </v-list-item-icon>
                 <v-list-item-title class="ml-1" @click="adminDarsh">DARSHBORD </v-list-item-title>
             </v-list-item>
             <!-- </router-link> -->
             <v-list-item>
                 <v-list-item-icon>
-                <v-icon>mdi-account</v-icon>
+                <v-icon color="#E53935">mdi-account</v-icon>
                 </v-list-item-icon>
                 <v-list-item-title class="ml-1" @click="users">USER-ACCOUNT</v-list-item-title>
             </v-list-item>
             <!-- <router-link to="/addProduct" tag="button"> -->
             <v-list-item>
                 <v-list-item-icon>
-                    <v-icon>mdi-folder</v-icon>
+                    <v-icon color="#E53935">mdi-folder</v-icon>
                 </v-list-item-icon>
                 <v-list-item-title class="ml-1" @click="addProduct">ADD PRODUCT </v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+                <v-list-item-icon>
+                    <v-icon color="#E53935">mdi-basket</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title class="ml-1" @click="deCommads">DETAILS-COMMADS</v-list-item-title>
+            </v-list-item>
+             <v-list-item>
+                <v-list-item-icon>
+                    <v-list-item-title class="ml-1" @click="deCommads"><v-treeview :items="items"></v-treeview></v-list-item-title>
+                </v-list-item-icon>
             </v-list-item>
             <!-- </router-link> -->
             </v-list-item-group>
@@ -63,7 +74,18 @@
   export default {
     data: () => ({
       drawer: false,
-      group:''
+      group:'',
+      items: [
+        {
+          id: 1,
+          name: 'Applications :',
+          children: [
+            { id: 2, name: 'Calendar : app' },
+            { id: 3, name: 'Chrome : app' },
+            { id: 4, name: 'Webstorm : app' },
+          ],
+        },
+      ]
     }),
     methods:{
       adminDarsh(){
@@ -74,6 +96,9 @@
       },
       addProduct(){
         this.$router.push('/addProduct')
+      },
+      deCommads(){
+        this.$router.push({name:'commands'});
       }
     }
   }

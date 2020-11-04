@@ -90,6 +90,8 @@ export default {
                this.$router.push({name:'payment-loading',params:{id}});
             }
             }).catch(err => console.log(err));
+            console.log(id)
+            localStorage.setItem('id',JSON.stringify(id));
         },
         editAdrress(a){
             let {id,address,phone} = a;

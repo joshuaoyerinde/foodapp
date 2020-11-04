@@ -22,24 +22,31 @@ export default {
     data:() =>({
         value:0,
         interver:{},
-        clear:''
+        clear:'',
+        // id:''
     }),
     beforeDestroy(){
       clearInterval ( this.interver);
     },
-    mounted() {
+    created() {
         // let id = this.$route.params.userid;
       this.interver = setInterval(() => {
+        //   let id = this.$route.params.id
             if(this.value == 100){
                 // return (this.value = 0);
-                this.clear = localStorage.clear;
+                this.clear = '';
                 localStorage.setItem('SAVECATS',JSON.stringify(this.clear));
-                this.$router.push('/usersAccount');
-                // alert(id);
+                // this.$router.push('/invoicepage/');
+                this.$router.push({name:'thank-you'});
+                // console.log(id)
             }
                  this.value += 5;
         }, 1000);
     },
+    // created() {
+        //  let id = this.$route.params.id
+        // console.log(id)
+    // },
 
 }
 </script>

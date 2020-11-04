@@ -22,13 +22,21 @@ const actions = {
         commit('ADD_TOTAL');
 
     },
+    // async fetchHistory({commit}){
+    //     let id = this.$route.params.id;
+    //     let urlhist = `http://localhost/foodApp/foodend/users/tet.php?id=${id}`;
+    //     let fomid = new FormData();
+    //     fomid.append('id',id);
+    //     let apihistory = await Axios.get(urlhist,fomid).then(r => console.log(r.data)).catch(err=>console.log(err))
+    //     // .then(r => console.log(r.data.token)).catch(err=>console.log(err))
+    //     // console.log(h);
+    //     commit('getHistory',apihistory);
+    // },
     //for the admin part
-    async fetchUsers({commit},adminRes){
-        let baseurl = "http://localhost/foodApp/foodend/admin/getRegisteredUsers.php";
-        adminRes = await Axios.get(baseurl).then(adminRes => {
-            console.log(adminRes.data)
-        }).catch(err => console.log(err));
-        commit('FETCH_REGISTERED_USERS',adminRes.data)
+    async fetchCommands({commit},apicommands){
+        let baseurl = "http://localhost/foodApp/foodend/admin/fetchCommands.php";
+        apicommands = await Axios.get(baseurl)
+        commit('FETCH_COMMANDS',apicommands.data)
     }
 }
 export default actions;

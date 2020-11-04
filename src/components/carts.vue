@@ -76,7 +76,7 @@
     </div>
 </template>
 <script>
-import Axios from 'axios'
+// import Axios from 'axios'
 // import FoodNav from '../../../foodend/productpic/'
 import { mapActions,mapGetters } from 'vuex'
 export default {
@@ -101,7 +101,7 @@ export default {
             setagain
         },
         checkOut(){
-            Axios.get()
+            // Axios.get()
              this.$router.push({name:'login-page'});
         },
         removeCart(id){

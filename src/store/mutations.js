@@ -51,9 +51,12 @@ const mutations = {
     FECTH_PRODUCT(state,resApiFromAction){
         state.Products = resApiFromAction;
     },
+    // getHistory(state,reshistapi){
+    //     state.usershistory = reshistapi;
+    // },
     ///.....for  admin  getting registered deatails from the admin
-    FETCH_REGISTERED_USERS(state,adminApiResFromAction){
-        state.getusers = adminApiResFromAction;
+    FETCH_COMMANDS(state,cmm){
+        state.commands = cmm;
     }
 }
 export default mutations

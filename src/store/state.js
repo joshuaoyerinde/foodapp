@@ -2,7 +2,8 @@ const state = {
     cart:[],
     Products: [],
     totalorder: 0,
-    getusers:[]
+    commands:[],
+    // usershistory:[]
     // quantity:0
 };
 let carts = JSON.parse(localStorage.getItem('SAVECATS')); 
