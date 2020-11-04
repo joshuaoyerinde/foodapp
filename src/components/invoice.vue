@@ -5,22 +5,14 @@
             <span>FOOd</span>
             <span class="font-weight-light text-danger">APp</span>
         </v-toolbar-title>
-        <div class="row justify-content-center">
             <div class="col-md-4 mx-auto">
             </div>
                  <v-btn text @click="hh">
                     Hoistory
                 </v-btn>
-                <v-btn text @click="aa">
-                    users account
-                </v-btn>
-        </div>
          <v-spacer></v-spacer>
             <v-btn icon @click="usersProfile">
                 <i class="fa fa-user" :style="{fontSize:'20px'}"></i>
-            </v-btn>
-             <v-btn icon>
-                <i class="fa fa-search" :style="{fontSize:'20px'}"></i>
             </v-btn>
         </v-app-bar>
         <v-container class="mt-5">
