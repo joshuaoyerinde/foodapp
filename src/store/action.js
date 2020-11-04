@@ -22,6 +22,16 @@ const actions = {
         commit('ADD_TOTAL');
 
     },
+    // async fetchInvoice({commit},apiinvoice){
+    //     let id = JSON.parse(localStorage.getItem('id'));
+    //     console.log(id)
+    //     let invoice = `http://localhost/foodApp/foodend/users/tet.php?id=${id}`;
+    //     let invid = new FormData();
+    //     invid.append('id',id);
+    //     apiinvoice = await Axios.get(invoice,invid);
+    //     commit('fetch_Invoice',apiinvoice.data);
+
+    // },
     // async fetchHistory({commit}){
     //     let id = this.$route.params.id;
     //     let urlhist = `http://localhost/foodApp/foodend/users/tet.php?id=${id}`;

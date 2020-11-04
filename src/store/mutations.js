@@ -51,6 +51,9 @@ const mutations = {
     FECTH_PRODUCT(state,resApiFromAction){
         state.Products = resApiFromAction;
     },
+    // fetch_Invoice(state,apiFromAction){
+    //     state.invoice = apiFromAction;
+    // },
     // getHistory(state,reshistapi){
     //     state.usershistory = reshistapi;
     // },

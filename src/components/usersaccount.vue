@@ -1,11 +1,12 @@
 <template>
     <div class="mt-5">
-    <v-container class="mt-5">
+    <h5>Your history so far</h5>
+    <v-container class="mt-3">
          <v-img src="../assets/u.png" class="mx-auto" aspect-ratio="1.2" width="100px"></v-img>
          <div class="clear-fix"></div>
             <v-card shaped>
                  <v-card-text>
-                    <v-simple-table  fixed-header height="300px" width="100px">
+                    <v-simple-table  fixed-header height="100px"  width="100px">
                         <template v-slot:default>
                             <thead>
                                 <tr>
@@ -17,7 +18,7 @@
                             </thead>
                             <tbody>
                                 <tr v-for="item in usersHistory" :key="item.carts_id"  class="tr-profile card-body shadow-sm">
-                                <td class="mt-5" >{{ item.product_name }}</td>
+                                <td class="mt-5" :style="{letterSpacing:'3px'}">{{ item.product_name }}</td>
                                 <td>{{ item.price }}</td>
                                 <td>{{ item.quantity}}</td>
                                 <td>{{ item.price *  item.quantity}}</td>
@@ -25,9 +26,12 @@
                             </tbody>
                         </template>
                     </v-simple-table>
+                    <div class="total-size mt-5">
+                        <h6 :style="{fontSize:'20px'}">Total:${{overall}}</h6>
+                    </div>
                 </v-card-text>
             </v-card>
-        <v-btn @click="hh">Moved To</v-btn>
+        <v-btn @click="logOut">Log Out</v-btn>
     </v-container>
     </div>
 </template>
@@ -39,16 +43,13 @@ export default {
     data() {
         return {
             usersHistory:[],
+            overall:''
         }
     },
     // computed:{...
     //     mapGetters(['gethistory'])
     // },
-    methods:{ //...mapActions(['fetchHistory']),
-        // historyFucn(){
-        //    this.usersHistory = this.gethistory
-        //    console.log(this.usersHistory)
-        // }
+    methods:{ 
             async fetchHistory(){
                 let id = JSON.parse(localStorage.getItem('id'))
                 console.log(id)
@@ -57,19 +58,31 @@ export default {
                 fomid.append('id',id);
                 await Axios.get(urlhist,fomid).then(r =>{
                     this.usersHistory = r.data 
-                    console.log(this.usersHistory);
-                    } ).catch(err=>console.log(err))
+                    let total = this.usersHistory.filter(t => t.price);
+                    let arrtotal = new Array()
+                    for (let index = 0; index < total.length; index++) {
+                        arrtotal = [...arrtotal,total[index].price];
+                        // console.log(arrtotal);
+                    }
+                    this.overall = arrtotal.reduce((x,y)=>{
+                        return x+y
+                    });
+                    console.log(this.overall);
+                    // console.log(this.usersHistory);
+                    }).catch(err=>console.log(err))
             // .then(r => console.log(r.data)).catch(err=>console.log(err))
             // console.log(h);
             // commit('getHistory',apihistory);
         },
-        hh(){
+        logOut(){
             //  this.$router.push({name:'invoice-page'});
-             this.$router.push('/invoicepage')
+            localStorage.removeItem('id');
+             this.$router.push('/')
         }
     },
     mounted(){
         this.fetchHistory();
+        // console.log(this.usersHistory)
         // this.historyFucn()
     },
     created() {

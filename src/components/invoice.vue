@@ -1,17 +1,17 @@
 <template>
     <div>
-        <v-app-bar app color="#FAFAFA">
-        <v-toolbar-title class="headline ml-5">
-            <span>FOOd</span>
-            <span class="font-weight-light text-danger">APp</span>
-        </v-toolbar-title>
+        <v-app-bar outlined app color="#FAFAFA">
+            <v-toolbar-title class="headline ml-5">
+                <span>FOOd</span>
+                <span class="font-weight-light text-danger">APp</span>
+            </v-toolbar-title>
             <div class="col-md-4 mx-auto">
             </div>
-                 <v-btn text @click="hh">
+            <v-btn text @click="hh">
                     Hoistory
-                </v-btn>
-         <v-spacer></v-spacer>
-            <v-btn icon @click="usersProfile">
+            </v-btn>
+            <v-spacer></v-spacer>
+            <v-btn class="mr-5" icon @click="usersProfile">
                 <i class="fa fa-user" :style="{fontSize:'20px'}"></i>
             </v-btn>
         </v-app-bar>

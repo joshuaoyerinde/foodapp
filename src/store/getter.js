@@ -14,6 +14,9 @@ const getters ={
     getCommands(state){
         return state.commands;
     },
+    // getInvoice(state){
+    //     return state.invoice;
+    // }
     // gethistory(state){
     //     return state.usershistory;
     // }
