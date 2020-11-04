@@ -1,27 +1,32 @@
 <template>
     <div class="mt-5">
     <v-container class="mt-5">
-         <v-img src="../assets/u.png" aspect-ratio="1.2" width="100px"></v-img>
-        <v-simple-table  fixed-header height="300px" width="100px">
-            <template v-slot:default>
-                <thead>
-                    <tr>
-                    <th class="text-left">Name</th>
-                    <th class="text-left">Price</th>
-                    <th class="text-left">Quantity</th>
-                    <th class="text-left">Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="item in usersHistory" :key="item.carts_id"  class="tr-profile card-body shadow-sm">
-                    <td class="mt-5" >{{ item.product_name }}</td>
-                    <td>{{ item.price }}</td>
-                    <td>{{ item.quantity}}</td>
-                    <td>{{ item.price *  item.quantity}}</td>
-                    </tr>
-                </tbody>
-            </template>
-        </v-simple-table>
+         <v-img src="../assets/u.png" class="mx-auto" aspect-ratio="1.2" width="100px"></v-img>
+         <div class="clear-fix"></div>
+            <v-card shaped>
+                 <v-card-text>
+                    <v-simple-table  fixed-header height="300px" width="100px">
+                        <template v-slot:default>
+                            <thead>
+                                <tr>
+                                <th class="text-left">Name</th>
+                                <th class="text-left">Price</th>
+                                <th class="text-left">Quantity</th>
+                                <th class="text-left">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in usersHistory" :key="item.carts_id"  class="tr-profile card-body shadow-sm">
+                                <td class="mt-5" >{{ item.product_name }}</td>
+                                <td>{{ item.price }}</td>
+                                <td>{{ item.quantity}}</td>
+                                <td>{{ item.price *  item.quantity}}</td>
+                                </tr>
+                            </tbody>
+                        </template>
+                    </v-simple-table>
+                </v-card-text>
+            </v-card>
         <v-btn @click="hh">Moved To</v-btn>
     </v-container>
     </div>
