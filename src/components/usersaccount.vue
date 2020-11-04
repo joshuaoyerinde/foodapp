@@ -1,6 +1,7 @@
 <template>
     <div class="mt-5">
     <v-container class="mt-5">
+         <v-img src="../assets/u.png" aspect-ratio="1.2" width="100px"></v-img>
         <v-simple-table  fixed-header height="300px" width="100px">
             <template v-slot:default>
                 <thead>
